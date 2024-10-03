@@ -34,8 +34,19 @@ namespace Uppgift_6_namn_sortering
                     Console.WriteLine(name);
                 }
             }
+            static void SearchName(List<string> names)
+            {
+                Console.WriteLine("\nEnter name to search:");
+                string searchName = Console.ReadLine();
 
-            Console.WriteLine("\nEnter name to search:");
+                // Felhantering för användarinmatning
+                if (string.IsNullOrWhiteSpace(searchName))
+                {
+                    Console.WriteLine("Name cannot be empty. Please enter a valid name.");
+                    return;
+                }
+
+                Console.WriteLine("\nEnter name to search:");
             string searchName = Console.ReadLine();
             if (names.Contains(searchName))
             {
